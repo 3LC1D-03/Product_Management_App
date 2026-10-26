@@ -1,0 +1,14 @@
+@reference "tailwindcss";
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/[0.12] bg-linear-135 from-white/[0.06] to-white/[0.015] shadow-[0_12px_36px_#0000001f,inset_0_1px_0_#ffffff0d] backdrop-blur-[28px];
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass-panel {
+      /* Preserve the opaque preference even when hover utilities change the panel. */
+      @apply bg-[#222428]! bg-none! [backdrop-filter:none]!;
+    }
+  }
+}
